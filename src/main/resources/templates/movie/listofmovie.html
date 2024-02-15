@@ -13,7 +13,7 @@ layout:decorate="~{template.html}">
             <th>Name</th>
             <th>Duration</th>
             <th>Year of Release</th>
-            <th>Gender</th>
+            <th>Genre</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -22,7 +22,7 @@ layout:decorate="~{template.html}">
                 <td th:text="${movie.name}"></td>
                 <td th:text="${movie.duration}"></td>
                 <td th:text="${movie.years}"></td>
-                <td th:text="${movie.gender}"></td>
+                <td th:text="${movie.genre}"></td>
                 <td>
                     <a th:href="@{/movie/form?id={id}(id=${movie.id})}">Update</a>
                     <form action="movie" method="post">

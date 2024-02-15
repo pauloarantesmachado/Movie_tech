@@ -12,13 +12,13 @@ public class Movie {
     private String name;
     private Integer duration;
     private Integer years;
-    private String gender;
+    private String genre;
 
     public Movie(RegisterDataMovie data){
         this.name = data.name();
         this.duration = data.duration();
         this.years = data.years();
-        this.gender = data.gender();
+        this.genre = data.genre();
     }
 
     public Movie(){}
@@ -51,19 +51,19 @@ public class Movie {
         this.years = years;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenre(String gender) {
+        this.genre = gender;
     }
 
     public void UpdateData(UpdateDataMovie data) {
         this.name = data.name();
         this.duration = data.duration();
         this.years = data.years();
-        this.gender = data.gender();
+        this.genre = data.genre();
 
     }
 }

@@ -4,6 +4,6 @@ public record RegisterDataMovie(
         String name,
         Integer duration,
         Integer years,
-        String gender
+        String genre
 ) {
 }
