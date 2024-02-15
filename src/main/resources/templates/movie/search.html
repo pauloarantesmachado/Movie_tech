@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}" xmlns="http://www.w3.org/1999/html">
+<body>
+<div layout:fragment="content">
+    <h1>Search Movie</h1>
+    <a href="/movie/form">New Movie</a>
+    <form method="post" action="/movie/search">
+        <div class="search">
+            <input id="search" name="search"  type="search" placeholder="Search the Movie…">
+            <input type="submit" value="Search">
+        </div>
+        <div th:if="${movie?.Title != null}">
+                <div>
+                    <img th:src="${movie?.Poster}">
+                </div>
+                <div>
+                    <label for="Title">Title:</label>
+                    <input id="Title" name="Title" th:value="${movie?.Title}" disabled>
+                </div>
+                <div>
+                    <label for="Runtime">Runtime:</label>
+                    <input id="Runtime" name="Runtime" th:value="${movie?.Runtime}" disabled>
+                </div>
+                <div>
+                    <label for="Year">Year:</label>
+                    <input id="Year" name="Year" th:value="${movie?.Year}" disabled>
+                </div>
+                <div>
+                    <label for="Genre">Genre:</label>
+                    <input id="Genre" name="Genre" th:value="${movie?.Genre}" disabled>
+                </div>
+        </div>
+        <div  th:if="${movie?.Title == null}">
+            <H1>Not found!</H1>
+        </div>
+    </form>
+</div>
+</body>
+</html>
